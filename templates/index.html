@@ -1,0 +1,196 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TitanicSurvivorPredictor</title>
+</head>
+<body>
+    <h1>Titanic Survivor Predictor</h1>
+
+    <form action="{{url_for('predict')}}" method="POST">
+        <div class="form-group">
+            <label for="Pclass">Pclass:</label>
+            <input type="text" id="Pclass" name="Pclass" placeholder="Enter Pclass value" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="Sex">Sex:</label>
+            <select id="Sex" name="Sex" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="Age">Age:</label>
+            <input type="text" id="Age" name="Age" placeholder="Enter Age value" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="SibSp">SibSp:</label>
+            <input type="text" id="SibSp" name="SibSp" placeholder="Enter SibSp value" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="Parch">Parch:</label>
+            <input type="text" id="Parch" name="Parch" placeholder="Enter Parch value" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="Fare">Fare:</label>
+            <input type="text" id="Fare" name="Fare" placeholder="Enter Fare value" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="Embarked">Embarked:</label>
+            <select id="Embarked" name="Embarked" required>
+                <option value="S">S</option>
+                <option value="C">C</option>
+                <option value="Q">Q</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <input type="submit" value="Predict">
+        </div>
+    </form>
+    
+    <div class="result">
+        {{final_result}}
+    </div>
+</body>
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanic Survivor Predictor</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        h1 {
+            color: #3498db;
+            text-align: center;
+            margin-top: 0;
+        }
+
+        form {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .result-box {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #ecf0f1;
+            color: #333;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+<body>
+    <h1>Titanic Survivor Predictor</h1>
+
+    <form action="{{url_for('predict')}}" method="POST">
+        <div class="form-group">
+            <label for="Pclass">Pclass:</label>
+            <input type="text" id="Pclass" name="Pclass" placeholder="Enter Pclass value" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="Sex">Sex:</label>
+            <select id="Sex" name="Sex" required>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <label for="Age">Age:</label>
+            <input type="text" id="Age" name="Age" placeholder="Enter Age value" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="SibSp">SibSp:</label>
+            <input type="text" id="SibSp" name="SibSp" placeholder="Enter SibSp value" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="Parch">Parch:</label>
+            <input type="text" id="Parch" name="Parch" placeholder="Enter Parch value" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="Fare">Fare:</label>
+            <input type="text" id="Fare" name="Fare" placeholder="Enter Fare value" required>
+        </div>
+    
+        <div class="form-group">
+            <label for="Embarked">Embarked:</label>
+            <select id="Embarked" name="Embarked" required>
+                <option value="S">S</option>
+                <option value="C">C</option>
+                <option value="Q">Q</option>
+            </select>
+        </div>
+    
+        <div class="form-group">
+            <input type="submit" value="Predict">
+        </div>
+    </form>
+    
+    <div class="result-box">
+        {{final_result}}
+    </div>
+</body>
+</html>
